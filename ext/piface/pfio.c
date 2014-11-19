@@ -71,7 +71,7 @@ char pfio_init(void)
 
         // initialise all outputs to 0
         int i;
-        for (i = 1; i <= 8; i++)
+        for (i = 0; i <= 8; i++)
             pfio_digital_write(i, 0);
 
     return 0;
