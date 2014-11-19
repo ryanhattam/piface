@@ -61,7 +61,7 @@ char pfio_init(void)
     spi->maxspeed = maxspeed;
 
         // set up some ports
-        spi_write(IOCON,  8);    // enable hardware addressing
+        spi_write(IOCON,  7);    // enable hardware addressing
         spi_write(IODIRA, 0);    // set port A as outputs
         spi_write(IODIRB, 0xFF); // set port B as inputs
         spi_write(GPIOA,  0xFF); // set port A on
@@ -71,7 +71,7 @@ char pfio_init(void)
 
         // initialise all outputs to 0
         int i;
-        for (i = 0; i <= 8; i++)
+        for (i = 0; i <= 7; i++)
             pfio_digital_write(i, 0);
 
     return 0;
@@ -135,7 +135,7 @@ char pfio_get_pin_bit_mask(char pin_number)
 
 char pfio_get_pin_number(char bit_pattern)
 {
-    char pin_number = 1; // assume pin 1
+    char pin_number = 0; // assume pin 1
     while ((bit_pattern & 1) == 0)
     {
         bit_pattern >>= 1;
