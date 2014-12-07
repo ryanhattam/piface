@@ -70,9 +70,9 @@ char pfio_init(void)
         spi_write(GPPUB,  0xFF); // set port B pullups on
 
         // initialise all outputs to 0
-        int i;
-        for (i = 1; i <= 8; i++)
-            pfio_digital_write(i, 0);
+        //int i;
+        //for (i = 1; i <= 8; i++)
+        //    pfio_digital_write(i, 0);
 
     return 0;
 }
